@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "James Lee <uptownhr@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "buefy": "^0.6.4",
+    "chokidar": "^2.0.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "js-cookie": "^2.2.0",
+    "nuxt": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.4.0",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
