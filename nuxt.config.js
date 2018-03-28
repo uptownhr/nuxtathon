@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -35,10 +37,13 @@ module.exports = {
       }
     }
   },
-  serverMiddleware: [
+  /*serverMiddleware: [
     '~/express'
-  ],
+  ],*/
   plugins: [
     '~/plugins/clientInit.js'
+  ],
+  modules: [
+    'nuxt-express-module'
   ]
 }
