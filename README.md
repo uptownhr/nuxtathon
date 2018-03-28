@@ -7,6 +7,7 @@ Goal of this project is to make it easy to develop in nuxt by providing an expre
 
 I have Just started working on this but currently allows you to login with github using a passport extension. Other things to come are 
 
+- [x] hot reloading of express routes as a serverMiddleware in Nuxt
 - [x] passport integration (github auth)
 - [ ] User model
 - [ ] Admin Pages
