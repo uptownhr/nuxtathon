@@ -2,10 +2,18 @@
 
 > Nuxt.js ready to start building your app
 
-## Todo
+## WIP
+Goal of this project is to make it easy to develop in nuxt by providing an express interface using serverMiddleware. Later, it may turn into a `nuxt module` but for now it is a standalone github repo. 
+
+I have Just started working on this but currently allows you to login with github using a passport extension. Other things to come are 
+
 - [x] passport integration (github auth)
 - [ ] User model
 - [ ] Admin Pages
+- [ ] PWA
+- [ ] Registration
+- [ ] Axios Integration
+- [ ] Containerized in docker
 
 ## Build Setup
 
