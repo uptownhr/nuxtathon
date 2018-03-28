@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Nuxtathon",
   "author": "James Lee <uptownhr@gmail.com>",
   "private": true,
   "scripts": {
