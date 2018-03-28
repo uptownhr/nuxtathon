@@ -1,6 +1,11 @@
-# app
+# Nuxtathon
 
-> Nuxt.js project
+> Nuxt.js ready to start building your app
+
+## Todo
+- [x] passport integration (github auth)
+- [ ] User model
+- [ ] Admin Pages
 
 ## Build Setup
 
