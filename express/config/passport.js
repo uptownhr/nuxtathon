@@ -1,5 +1,4 @@
 const passport = require('passport')
-const request = require('request')
 const LocalStrategy = require('passport-local').Strategy
 const GitHubStrategy = require('passport-github').Strategy
 
