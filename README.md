@@ -9,13 +9,14 @@ I have Just started working on this but currently allows you to login with githu
 
 - [x] hot reloading of express routes as a serverMiddleware in Nuxt
 - [x] passport integration (github auth)
-- [ ] User model
-- [ ] Admin Pages
+- [ ] Buefy
 - [ ] PWA
-- [ ] Registration
 - [ ] Axios Integration
-- [ ] Containerized in docker
-- [ ] Nuxt module
+- [ ] User model
+- [ ] Registration & Login
+- [ ] User Dashboard
+- [ ] Admin Dashboard
+- [ ] Containerized in Docker
 
 ## Build Setup
 
@@ -32,6 +33,14 @@ $ npm start
 
 # generate static project
 $ npm run generate
+```
+
+## Build Setup with Docker
+Nuxt, Mongo and Proxy container will start
+
+``` bash
+# start containers
+docker-compose up
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
