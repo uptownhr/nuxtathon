@@ -1,9 +1,18 @@
 # Nuxtathon
 
-> Nuxt.js ready to start building your app
+> Nuxt.js with all the goodies hooked up, ready for you to start building.
 
 ## WIP
-Goal of this project is to make it easy to develop in nuxt by providing an express interface using serverMiddleware. Gaining inspiration from (hackathon starter)[https://github.com/sahat/hackathon-starter] but wanting to add more by providing a basic admin interface as well.
+Goal of this project is to give you the best Nuxt boilerplate to get started working on your app. Gaining inspiration from (hackathon starter)[https://github.com/sahat/hackathon-starter], nuxtathon will additional boilerplate code for
+
+ - routing through [express]()
+ - in-memory [mongodb]() or containerized [mongodb]()
+ - basic user Model using [mongoose]()
+ - authentication through [passport]()
+ - Dashboards for registered User and Admin
+ - Awesome nuxt modules ([Buefy](), [PWA](), [Axios]())
+
+Goal of this project is to make it easy to develop in nuxt by providing an express interface using serverMiddleware. Gaining inspiration from but wanting to add more by providing a basic admin interface as well.
 
 I have Just started working on this but currently allows you to login with github using a passport extension. Other things to come are 
 
@@ -16,7 +25,8 @@ I have Just started working on this but currently allows you to login with githu
 - [ ] Registration & Login
 - [ ] User Dashboard
 - [ ] Admin Dashboard
-- [ ] Containerized in Docker
+- [ ] Containerized in Docker (mongoo
+- [ ] In-memory mongodb
 
 ## Build Setup
 
