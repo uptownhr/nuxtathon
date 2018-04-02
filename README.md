@@ -2,6 +2,9 @@
 
 > Nuxt.js with all the goodies hooked up, ready for you to start building.
 
+![screenshot](/static/landing-screenshot.png)
+
+
 ## WIP
 Goal of this project is to give you the best Nuxt boilerplate to get started working on your app. Gaining inspiration from (hackathon starter)[https://github.com/sahat/hackathon-starter], nuxtathon will additional boilerplate code for
 
