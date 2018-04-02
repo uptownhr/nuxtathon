@@ -21,7 +21,7 @@ I have Just started working on this but currently allows you to login with githu
 
 - [x] hot reloading of express routes as a serverMiddleware in Nuxt
 - [x] passport integration (github auth)
-- [ ] Buefy
+- [x] Buefy
 - [ ] PWA
 - [ ] Axios Integration
 - [ ] User model
