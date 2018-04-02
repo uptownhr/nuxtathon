@@ -35,15 +35,25 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
+    },
   },
-  /*serverMiddleware: [
-    '~/express'
-  ],*/
+
   plugins: [
-    '~/plugins/clientInit.js'
+    {src: '~/plugins/clientInit.js', ssr: false},
+    {src: '~/plugins/buefy.js', ssr: true}
   ],
+
   modules: [
     'nuxt-express-module'
+  ],
+
+  css: [
+    {src: '@/assets/css/index.scss', lang: 'scss'}
   ]
+
 }
