@@ -12,7 +12,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', href: '//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css'}
     ]
   },
   /*
@@ -45,7 +45,8 @@ module.exports = {
 
   plugins: [
     {src: '~/plugins/clientInit.js', ssr: false},
-    {src: '~/plugins/buefy.js', ssr: true}
+    {src: '~/plugins/buefy.js', ssr: true},
+    {src: '~/plugins/mixins.js', ssr: true}
   ],
 
   modules: [
