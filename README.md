@@ -2,6 +2,9 @@
 
 > Nuxt.js with all the goodies hooked up, ready for you to start building.
 
+![screenshot](/static/landing-screenshot.png)
+
+
 ## WIP
 Goal of this project is to give you the best Nuxt boilerplate to get started working on your app. Gaining inspiration from (hackathon starter)[https://github.com/sahat/hackathon-starter], nuxtathon will additional boilerplate code for
 
@@ -18,7 +21,7 @@ I have Just started working on this but currently allows you to login with githu
 
 - [x] hot reloading of express routes as a serverMiddleware in Nuxt
 - [x] passport integration (github auth)
-- [ ] Buefy
+- [x] Buefy
 - [ ] PWA
 - [ ] Axios Integration
 - [ ] User model
