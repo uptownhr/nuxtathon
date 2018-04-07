@@ -1,0 +1,77 @@
+version: '3'
+
+services:
+  api:
+    volumes:
+    - ./api:/api
+    - ./.env:/api/.env
+    - ./logs:/var/lib/logs
+    command: npm run dev
+    environment:
+    - NODE_ENV=dev
+    - VIRTUAL_HOST=api.nuxtathon.docker
+
+  realtime:
+    volumes:
+    - ./realtime:/realtime
+    - ./.env:/realtime/.env
+    - ./logs:/var/lib/logs
+    command: npm run dev
+    environment:
+    - NODE_ENV=dev
+    - VIRTUAL_HOST=realtime.nuxtathon.docker
+
+  admin:
+    volumes:
+    - ./admin:/admin
+    - ./.env:/admin/.env
+    command: npm run dev
+    environment:
+    - NODE_ENV=dev
+    - VIRTUAL_HOST=admin.nuxtathon.docker
+
+  www:
+    volumes:
+    - ./www:/www
+    - ./.env:/www/.env
+    command: npm run dev
+    environment:
+    - NODE_ENV=dev
+    - VIRTUAL_HOST=www.nuxtathon.docker
+
+  app:
+    volumes:
+    - ./app:/app
+    - ./.env:/app/.env
+    command: npm run dev
+    environment:
+    - NODE_ENV=dev
+    - VIRTUAL_HOST=app.nuxtathon.docker
+
+  mongo:
+    image: nuxtathon_mongo
+    build:
+      context: ./mongo
+    ports:
+    - 27017
+
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  test:
+    image: node:8.8.0-alpine
+    environment:
+    - NODE_ENV=test
+    - DB_HOST=mongo
+    - DB_DB=nuxtathontest
+    working_dir: /api
+    command: yarn ava
+    volumes:
+    - ./api:/api
+    - ./.env:/api/.env
+    - ./logs:/var/lib/logs

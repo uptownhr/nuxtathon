@@ -1,0 +1,212 @@
+@import './shadows.scss';
+
+@mixin button-dimension($font-size) {
+  font-size: $font-size;
+  $ratio: 3.125;
+  padding: 0 0.5rem;
+  &.is-wide {
+    padding: 0 2.75em;
+  }
+  @if $font-size == $button-tiny {
+    line-height: remy(22);
+    img {
+      width: remy(12);
+      height: remy(12);
+    }
+  } @else if $font-size == $button-small {
+    line-height: remy(30);
+    img {
+      width: remy(16);
+      height: remy(16);
+    }
+  } @else if $font-size == $button-large {
+    line-height: remy(54);
+    img {
+      width: remy(24);
+      height: remy(24);
+    }
+  } @else {
+    line-height: remy(42);
+    img {
+      width: remy(20);
+      height: remy(20);
+    }
+  }
+}
+
+@mixin inverted-button() {
+  &.is-danger, &.is-info, &.is-primary, &.is-warning, &.is-success {
+    &:not([disabled]):hover {
+      background-color: $white;
+      filter: none;
+    }
+  }
+}
+
+@mixin clear-button() {
+  background-color: transparent;
+  border-color: transparent;
+  &.is-primary {
+    color: $primary;
+  }
+  &.is-info {
+    color: $blue;
+  }
+  &.is-danger {
+    color: $danger;
+  }
+  &.is-warning {
+    color: $warning;
+  }
+  &.is-success {
+    color: $success;
+  }
+  &:not([disabled]):hover {
+    background-color: transparent;
+    filter: none;
+  }
+}
+
+@mixin flat-hover($width, $color) {
+  &.flat {
+    box-shadow: none;
+  }
+  &.flat:hover {
+    border: $width solid $color;
+  }
+  &.flat:active {
+    border: $width solid $color;
+  }
+  &.flat:focus {
+    border: $width solid $color;
+  }
+}
+
+@mixin flat-hover-button($color) {
+  &.flat {
+    box-shadow: none;
+  }
+  &.flat:hover {
+    background-color: $color;
+    opacity: 0.85;
+  }
+  &.flat:focus {
+    background-color: $color;
+    opacity: 0.85;
+  }
+}
+// ------------------------------------------------------------------------------
+// !-- Placeholders
+// ------------------------------------------------------------------------------
+@mixin placeholder-font($font-size) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: remy($font-size);
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    font-size: remy($font-size);
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    font-size: remy($font-size);
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    font-size: remy($font-size);
+  }
+}
+
+@mixin placeholder-color($color) {
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $color;
+
+  }
+}
+@mixin placeholder-line-height($line-height) {
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    line-height: $line-height;
+
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    line-height: $line-height;
+
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    line-height: $line-height;
+
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    line-height: $line-height;
+
+  }
+}
+
+@mixin placeholder-fix-mozilla-opacity($opacity) {
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    opacity:  $opacity;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    opacity:  $opacity;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+  }
+  :-ms-input-placeholder { /* Microsoft Edge */
+
+  }
+
+}
+
+
+
+
+
+// ------------------------------------------------------------------------------
+// !-- Truncate
+// ------------------------------------------------------------------------------
+
+@mixin truncate($mw:100%) {
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: $mw;
+}
+
+
+
+// ------------------------------------------------------------------------------
+// !-- Line Clamp
+// ------------------------------------------------------------------------------
+
+@mixin line-clamp($number-of-lines,$line-height) {
+  position: relative;
+  overflow: hidden;
+  line-height: $line-height;
+  max-height: $line-height * $number-of-lines + 1;
+  display: -webkit-box;
+  -webkit-line-clamp: $number-of-lines;
+  -webkit-box-orient: vertical;
+}
+
+
+
+// ------------------------------------------------------------------------------
+// !-- Font Weight
+// ------------------------------------------------------------------------------
+@mixin font-mass($thick) {
+  font-weight: $thick;
+}

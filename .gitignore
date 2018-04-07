@@ -1,14 +1,14 @@
-# dependencies
-node_modules
-
-# logs
-npm-debug.log
-
-# Nuxt build
-.nuxt
-
-# Nuxt generate
-dist
-
-.editorconfig
 .idea
+.DS_Store
+.DS_STORE
+.nuxt
+npm-debug.log
+node_modules/
+yarn-error.log
+admin/.env
+api/.env
+api/.nyc_output
+app/.env
+app/dist
+
+www/.env

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./api
+
+  realtime:
+    build:
+      context: ./api
+
+  admin:
+    build:
+      context: ./admin
+
+  www:
+    build:
+      context: ./www
+
+  app:
+    build:
+      context: ./app

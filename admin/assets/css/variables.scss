@@ -1,0 +1,432 @@
+@import './easing.scss';
+
+
+$family-primary: 'proxima-soft', sans-serif;
+$family-body: 'proxima-soft', sans-serif;
+//Primary Colors
+$purple: hsl(268, 33%, 42%);
+$purple-darker: hsl(268, 34%, 34%);
+$purple-darkest: hsl(268, 33%, 26%);
+$green: hsl(159, 67%, 44%);
+$green-light: hsl(159, 51%, 72%);
+$green-dark: hsl(159, 86%, 33%);
+$blue: hsl(199, 66%, 46%);
+$blue-light: hsl(199, 100%, 95%);
+$yellow: hsl(45, 86%, 61%);
+//RED Shades
+$red: hsl(0, 78%, 65%);
+$red-1: hsl(0, 100%, 58%);
+$red-2: hsl(0, 78%, 65%);
+//Shades of White , Black, and Grey
+$white: hsl(0, 0%, 100%);
+$white-grey-1: hsl(260, 13%, 95%);
+$white-grey-2: hsl(260, 7%, 92%);
+$white-grey-3: hsl(270, 3%, 87%);
+$black: hsl(270, 2%, 25%);
+$black-grey-1: hsl(300, 1%, 37%);
+$black-grey-2: hsl(240, 0%, 49%);
+$black-grey-3: hsl(270, 1%, 61%);
+$black-grey-4: hsl(270, 1%, 73%);
+//Remy Function: convert px to REM.
+@function remy($pxsize) {
+  @return ($pxsize/16)+rem;
+}
+//Button Attributes
+$button-tiny: remy(10);
+$button-small: remy(12);
+$button-regular: remy(16);
+$button-large: remy(18);
+$link: $purple;
+$ease: $ease-out-quint;
+$time: 200ms;
+//Nav Variables
+$nav-width: 200px;
+$nav-collapse-width: 72px;
+$primary-font: "proxima-soft";
+//View Breakpoints
+$breakpoints:(xs: 414px,sm: 768px, md: 1024px, lg: 1280px, xl: 1440px);
+// Miscellaneous
+$easing: ease-out;
+$radius-small: 2px;
+$radius: 3px;
+$radius-large: 5px;
+$speed: 86ms;
+//transition speed
+$speed-slow: 150ms;
+$speed-slower: 250ms;
+//Colors
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
+$orange:       hsl(14,  100%, 53%);
+$turquoise:    hsl(171, 100%, 41%);
+$cyan:         hsl(204, 86%,  53%);
+$success: $green;
+$info: $blue;
+$warning: $yellow;
+$danger: $red;
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+$light: $white-ter;
+$dark: $grey-darker;
+//Derived Variables
+$primary: $purple;
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+// Invert colors
+$orange-invert: findColorInvert($orange);
+$yellow-invert: findColorInvert($yellow);
+$green-invert: findColorInvert($green);
+$turquoise-invert: findColorInvert($turquoise);
+$cyan-invert: findColorInvert($cyan);
+$blue-invert: findColorInvert($blue);
+$purple-invert: findColorInvert($purple);
+$red-invert: findColorInvert($red);
+$primary-invert: $purple-invert;
+$info-invert: $blue-invert;
+$success-invert: $green-invert;
+$warning-invert: $yellow-invert;
+$danger-invert: $red-invert;
+$light-invert: $dark;
+$dark-invert: $light;
+// General colors
+$background: $white-grey-1;
+$border: $white-grey-3;
+$border-hover: $grey-light;
+// Text colors
+$text: $grey-dark;
+$text-invert: findColorInvert($text);
+$text-light: $grey;
+$text-strong: $grey-darker;
+// Code colors
+$code: $red;
+$code-background: $background;
+$pre: $text;
+$pre-background: $background;
+// Link colors
+$link: $purple;
+$link-invert: $purple-invert;
+$link-visited: $purple;
+$link-hover: $grey-darker;
+$link-hover-border: $grey-light;
+$link-focus: $grey-darker;
+$link-focus-border: $blue;
+$link-active: $grey-darker;
+$link-active-border: $grey-dark;
+// Typography
+$family-sans-serif: $family-primary;
+$family-monospace: monospace;
+$render-mode: optimizeLegibility;
+$family-primary: $family-sans-serif;
+$family-code: $family-monospace;
+// Lists and maps
+$transparent: transparent;
+$transparent-invert: #3F3E40;
+$colors: (
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "link": ($link, $link-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $white),
+  "danger": ($danger, $danger-invert),
+  "transparent": ($transparent, $transparent-invert)
+);
+$shades: (
+  "black-bis": $black-bis,
+  "black-ter": $black-ter,
+  "grey-darker": $grey-darker,
+  "grey-dark": $grey-dark,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "white-ter": $white-ter,
+  "white-bis": $white-bis
+);
+
+$family-primary: "proxima-soft", sans-serif;
+$family-body: 'proxima-soft', sans-serif;
+$signature-font: 'dafoe', cursive;
+
+//Primary Colors
+$purple: hsl(268, 33%, 42%);
+$purple-darker: hsl(268, 34%, 34%);
+$purple-darkest: hsl(268, 33%, 26%);
+
+$green: hsl(159, 67%, 44%);
+$green-light: hsl(159, 51%, 72%); //need to revisit these shades
+$green-dark: hsl(159, 86%, 33%);
+$green-1: hsl(159, 88%, 57%);
+
+
+$blue: hsl(199, 66%, 46%); //need to revisit these shades
+$blue-light: hsl(199, 100%, 95%);
+$lightblue: #2295C6;
+
+$yellow: hsl(45, 86%, 61%);
+
+//RED Shades
+$red: hsl(0, 78%, 65%);
+$red-1: hsl(0, 100%, 58%);
+$red-2: hsl(0, 78%, 65%);
+
+//Shades of White , Black, and Grey
+$white: hsl(0, 0%, 100%); //#FFFFFF
+$white-grey-1: hsl(240, 9%, 98%); //#F9F9FA
+$white-grey-2: hsl(260, 13%, 95%); //#F3F2F5
+$white-grey-3: hsl(260, 7%, 92%); //#E9E8EB
+$white-grey-4: hsl(270, 3%, 87%); //#DFDEE0
+
+$black: hsl(270, 2%, 25%); //#3F3E40x
+$black-grey-1: hsl(300, 1%, 37%); //#5E5D5E
+$black-grey-2: hsl(240, 0%, 49%); //#7C7C7D
+$black-grey-3: hsl(270, 1%, 61%); //#9B9A9C
+$black-grey-4: hsl(270, 1%, 73%); //#B9B8BA
+
+$secondary: $green;
+
+
+//Remy Function: convert px to REM.
+@function remy($pxsize) {
+  @return ($pxsize/16)+rem;
+}
+
+//Button Attributes
+$button-tiny: remy(10);
+$button-small: remy(12);
+$button-regular: remy(16);
+$button-large: remy(18);
+
+$link: $purple;
+$ease: $ease-out-quint;
+$easing: $ease-out-quint;
+$time: 200ms;
+
+//Nav Variables
+$nav-width: 200px;
+$nav-collapse-width: 72px;
+$primary-font: "proxima-soft";
+
+//View Breakpoints
+$breakpoints:(xs: 414px,sm: 768px, md: 1024px, lg: 1280px, xl: 1440px);
+
+$laptop: 960px;
+
+// Miscellaneous
+
+$radius-small: remy(3);
+$radius: remy(3);
+$radius-large: remy(3);
+$speed: 200ms;
+//transition speed
+$speed-slow: 150ms;
+$speed-slower: 250ms;
+
+//Colors
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
+
+$orange:       hsl(23, 78%, 65%);
+$turquoise:    hsl(171, 100%, 41%);
+$cyan:         hsl(204, 86%,  53%);
+$success: $green;
+$info: $blue;
+$warning: $yellow;
+$danger: $red;
+
+$grey-darkest: #59565d;
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-lightest: #F9F9F9;
+$grey-line: #eae7ed;
+
+$chill_gray: #C5C1CA;
+
+
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+
+$off-white: #F7F7F7;
+$off-off-white: #F6F5F7;
+$dark-purple: #3C1F48;
+
+$light: $white-ter;
+$dark: $grey-darker;
+
+//Derived Variables
+$primary: $purple;
+
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+// Invert colors
+
+$orange-invert: findColorInvert($orange);
+$yellow-invert: findColorInvert($yellow);
+$green-invert: findColorInvert($green);
+$turquoise-invert: findColorInvert($turquoise);
+$cyan-invert: findColorInvert($cyan);
+$blue-invert: findColorInvert($blue);
+$purple-invert: findColorInvert($purple);
+$red-invert: findColorInvert($red);
+
+$primary-invert: $purple-invert;
+$info-invert: $blue-invert;
+$success-invert: $green-invert;
+$warning-invert: $yellow-invert;
+$danger-invert: $red-invert;
+$light-invert: $dark;
+$dark-invert: $light;
+
+// General colors
+
+$background: $white-grey-1;
+$border: $white-grey-3;
+$border-hover: $grey-light;
+
+// Text colors
+
+$text: $grey-dark;
+$text-invert: findColorInvert($text);
+$text-light: $grey;
+$text-strong: $grey-darker;
+
+$text-color: (t1: #3F3F40, t2: #7F7E80, t3: #3F3F40, t4: #B2B1B3, t5: #E2E1E3);
+$text-black-1: #3F3F40;
+$text-grey-1: #7F7E80;
+
+$grey-line: #eae7ed;
+
+// Code colors
+
+$code: $red;
+$code-background: $background;
+
+$pre: $text;
+$pre-background: $background;
+
+// Link colors
+
+$link: $purple;
+$link-invert: $purple-invert;
+$link-visited: $purple;
+
+$link-hover: $grey-darker;
+$link-hover-border: $grey-light;
+
+$link-focus: $grey-darker;
+$link-focus-border: $blue;
+
+$link-active: $grey-darker;
+$link-active-border: $grey-dark;
+
+// Typography
+
+$family-sans-serif: $family-primary;
+$family-monospace: monospace;
+$render-mode: optimizeLegibility;
+
+$family-primary: $family-sans-serif;
+$family-code: $family-monospace;
+
+$size-1: 40px;
+$size-2: 32px;
+$size-3: 28px;
+$size-4: 23px;
+$size-5: 19px;
+$size-6: 16px;
+
+$body-small: remy(14);
+$body-tiny: remy(12);
+$body-micro: remy(10);
+
+
+$sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6);
+
+$body-sizes: ($body-small, $body-tiny, $body-micro);
+
+$nav-fontsize: (h1: 16px, h2: 12px, h3: 10px);
+$button-fontsize: (small: 11px, large: 18px);
+
+$header-height: 4.5rem;
+
+
+// Lists and maps
+
+$colors: (
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "link": ($link, $link-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $white),
+  "danger": ($danger, $danger-invert),
+  "grey": ($black-grey-2, $black-grey-2)
+);
+$shades: (
+  "black-bis": $black-bis,
+  "black-ter": $black-ter,
+  "grey-darker": $grey-darker,
+  "grey-dark": $grey-dark,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "white-ter": $white-ter,
+  "white-bis": $white-bis
+);
+// viewport
+$breakpoints:(
+  "xs": 414px,
+  "sm": 768px,
+  "md": 1024px,
+  "lg": 1280px,
+  "xl": 1440px
+);
+
+//Dimensions
+$dimensions: 8 12 16 24 32 36 40 42 44 46 48 56 60 64 72 80 96 108 128 150 256 512;
+
+//ADDING TO VARIABLES
+$text-sizes: (
+  "40": 40,
+  "32": 32,
+  "28": 28,
+  "23": 23,
+  "19": 19,
+  "16": 16,
+  "14": 14,
+  "12": 12,
+  "10": 10
+);
+
+$text-weights: (
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700
+);
+
+
+//PLEASE SAVE AND TRANSFER OVER WHEN STYLING OVERHAUL IS MERGED IN!
+$box-shadow01: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.1);
+
+// Document Vars
+$document-padding: remy(32) remy(48);
